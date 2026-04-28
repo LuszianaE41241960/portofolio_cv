@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero {
+  background: black;
+  color: white;
+}
+.section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.section h2 {
+    margin-bottom: 30px;
+}
+
+/* GRID UTAMA */
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto; /* center */
+    align-items: stretch;
+}
+
+/* CARD */
+.exp-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+/* ITEM */
+.edu-item {
+    margin-bottom: 15px;
+}
+
+.edu-title {
+    font-weight: bold;
+}
+
+.edu-sub {
+    font-size: 14px;
+    color: gray;
+}
+
+.edu-text {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* FOTO */
+.photo-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .exp-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .exp-card {
+        text-align: center;
+    }
+}

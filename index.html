@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CV Lusziana</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #ffe4ec, #ffffff);
+            padding-bottom: 90px;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #e91e63;
+            text-align: center;
+        }
+
+        /* CARD */
+        .card {
+            background: #fff0f5;
+            padding: 20px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            line-height: 1.6;
+        }
+
+        /* GRID */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 100%;
+            max-width: 1100px;
+            margin-top: 30px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        /* CARD STYLE */
+        .exp-card {
+            background: #fff0f5;
+            padding: 22px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: left;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .exp-card p {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .edu-title {
+            font-weight: bold;
+            color: #e91e63;
+        }
+
+        .edu-sub {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .edu-text {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* ICON */
+        .contact-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .icon-box {
+            background: #fff0f5;
+            padding: 12px;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #e91e63;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            background: #f8bbd0;
+            color: #e91e63;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #clock {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        /* BUTTERFLY */
+        .butterflies {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .fly {
+            position: absolute;
+            font-size: 22px;
+            opacity: 0;
+            animation: fly 12s linear infinite;
+        }
+
+        .fly:nth-child(1) { left: 10%; animation-duration: 14s; }
+        .fly:nth-child(2) { left: 50%; animation-duration: 12s; font-size: 18px; }
+        .fly:nth-child(3) { left: 80%; animation-duration: 16s; font-size: 24px; }
+
+        @keyframes fly {
+            0% { transform: translateY(100vh); opacity: 0; }
+            10% { opacity: 1; }
+            50% { transform: translateY(50vh); }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+        /* FOTO PROFIL BULAT */
+.photo-card {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.photo-card img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #f8bbd0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.photo-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.photo-card img {
+    transform: translateY(-20px);
+}
+#sertifikat {
+    min-height: 100vh;
+    padding: 0; /* 🔥 buang padding biar center bener */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#sertifikat h2 {
+    margin-top: -40px;
+}
+#sertifikat .exp-grid {
+    margin-top: 20px; /* jangan terlalu jauh dari judul */
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- HOME -->
+<div class="butterflies">
+    <span class="fly">🦋</span>
+    <span class="fly">🦋</span>
+    <span class="fly">🦋</span>
+</div>
+
+<div class="section" id="home">
+
+    <h1 style="margin-bottom:5px;">LUSZIANA AZZAHRA PUTRI</h1>
+
+    <p style="color:#777; margin:0;">
+        UI/UX Designer • Web Developer • Informatics Student
+    </p>
+
+    <p style="max-width:600px; color:#555; font-size:14px; margin-top:10px;">
+        Mahasiswa Teknik Informatika Politeknik Negeri Jember
+    </p>
+
+    <div id="clock" style="margin-top:10px; font-size:14px; color:#e91e63; font-weight:bold;"></div>
+
+    <!-- CONTACT ICONS -->
+    <div class="contact-icons" style="margin-top:20px;">
+
+        <!-- Email -->
+        <a href="mailto:lusianaazzahraputri@gmail.com" class="icon-box">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/6285748013582" target="_blank" class="icon-box">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/lusziana_azzhrp?igsh=MTk1c2I3ZTA2OXloeg==" target="_blank" class="icon-box">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <!-- JobStreet -->
+        <a href="https://id.jobstreet.com/profiles/lusiana-putri-7Q8hNKtNmg" target="_blank" class="icon-box">
+            <i class="fa-solid fa-briefcase"></i>
+        </a>
+
+        <!-- Lokasi -->
+        <a href="https://maps.google.com/?q=Nganjuk" target="_blank" class="icon-box">
+            <i class="fa-solid fa-location-dot"></i>
+        </a>
+
+    </div>
+        </div>
+
+    </div>
+
+
+
+
+<!-- PROFIL & PENDIDIKAN -->
+<div class="section" id="profil">
+    <h2>Profil & Pendidikan</h2>
+
+    <div class="exp-grid">
+
+        <!-- PROFIL -->
+       <div class="exp-card">
+    <b>👤 Profil</b><br><br>
+
+    <div class="edu-item profil-box">
+        <div class="edu-text profil-text">
+            Saya adalah mahasiswa Teknik Informatika Politeknik Negeri Jember yang memiliki minat di bidang UI/UX dan pengembangan web.
+            Saya terbiasa menggunakan Git, Figma, VS Code, dan Android Studio serta memiliki ketertarikan pada desain antarmuka yang user-friendly.
+        </div>
+    </div>
+
+</div>
+
+        <!-- PENDIDIKAN -->
+        <div class="exp-card">
+            <b>🎓 Pendidikan</b><br><br>
+
+            <div class="edu-item">
+                <div class="edu-title">SMKN 2 Nganjuk</div>
+                <div class="edu-sub">Manajemen Perkantoran (2021 – 2024)</div>
+                <div class="edu-text">
+                    Kepegawaian • Keuangan • Teknologi Perkantoran • Kewirausahaan • Komunikasi Digital • Korespondensi
+                </div>
+            </div>
+
+            <div class="edu-item">
+                <div class="edu-title">Politeknik Negeri Jember</div>
+                <div class="edu-sub">D4 Teknik Informatika (2024 – Sekarang)</div>
+                <div class="edu-text">
+                    Basis Data • Java • UI/UX • Web & Desktop • Jaringan • Manajemen Proyek • AI • Image Processing
+                </div>
+            </div>
+            
+
+        </div>
+<div class="photo-card">
+    <img src="assets/img/fotoku.jpeg" alt="Foto Profil">
+</div>
+
+
+</div>
+    </div>
+</div>
+
+<!-- PENGALAMAN -->
+<div class="section" id="pengalaman">
+    <h2>Pengalaman</h2>
+
+    <div class="exp-grid">
+
+        <div class="exp-card">
+            <b>Mokapos – UI/UX Designer & Developer</b>
+            <p>
+                Berperan dalam perancangan dan pengembangan aplikasi kasir berbasis desktop.
+                Melakukan analisis kebutuhan pengguna, membuat wireframe, prototype, dan user flow menggunakan Figma,
+                serta mengimplementasikan desain ke dalam aplikasi menggunakan Java di NetBeans.
+                Fokus utama adalah menciptakan tampilan yang intuitif, modern, dan mudah digunakan oleh UMKM.
+            </p>
+        </div>
+
+        <div class="exp-card">
+            <b>Masjid Nurul Huda – Quality Assurance</b>
+            <p>
+                Bertanggung jawab dalam pengujian aplikasi untuk memastikan kualitas sistem sebelum digunakan oleh pengguna.
+                Melakukan functional testing, menemukan bug, serta menyusun laporan hasil pengujian secara sistematis.
+                Pengalaman ini melatih ketelitian, problem solving, dan pemahaman alur kerja software development.
+            </p>
+        </div>
+
+        <div class="exp-card">
+            <b>Magang ATR/BPN Nganjuk</b>
+            <p>
+                Terlibat dalam kegiatan administrasi pertanahan dengan fokus pada pengelolaan data sertifikat tanah,
+                pengarsipan dokumen fisik dan digital, serta membantu proses verifikasi data masyarakat.
+                Selama magang, saya belajar pentingnya ketelitian, kedisiplinan, dan kerja sistematis dalam pengelolaan data pemerintahan.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- SERTIFIKAT -->
+<div class="section" id="sertifikat">
+    <h2>Sertifikat</h2>
+
+    <div class="exp-grid">
+
+        <div class="exp-card" data-img="assets/img/sertif-sipora.jpeg" onclick="openModal(this)">
+            <b>SIPORA</b><br>
+            <i>Bimbingan Teknis Parafrase, Manajemen Referensi, dan Unggah di SIPORA untuk Karya Ilmiah Mahasiswa<br>
+            Politeknik Negeri Jember</i><br>
+            <small>Klik untuk lihat</small>
+        </div>
+
+        <div class="exp-card" data-img="assets/img/sertif-lkmm.jpeg" onclick="openModal(this)">
+            <b>LKMM</b><br>
+            <i>Teknik Informatika PSDKU Kampus 3 Politeknik Negeri Jember</i><br>
+            <small>Klik untuk lihat</small>
+        </div>
+
+                <div class="exp-card" data-img="assets/img/sertif-magang.jpeg" onclick="openModal(this)">
+            <b>Magang ATR/BPN</b><br>
+            <i>Kegiatan Magang di Kantor ATR/BPN Kabupaten Nganjuk</i><br>
+            <small>Klik untuk lihat</small>
+        </div>
+
+        <div class="exp-card" data-img="assets/img/sertif-uji.jpeg" onclick="openModal(this)">
+            <b>Uji Kompetensi</b><br>
+            <i>Uji Kompetensi Keahlian Manajemen Perkantoran SMKN 2 Nganjuk</i><br>
+            <small>Klik untuk lihat</small>
+        </div>
+
+         <div class="exp-card" data-img="assets/img/ux-bootcamp.jpeg" onclick="openModal(this)">
+            <b>UI/UX Bootcamp</b><br>
+            <i>Peserta UI/UX Bootcamp – Pelatihan Desain dan Pengalaman Pengguna</i><br>
+            <small>Klik untuk lihat</small>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<!-- SKILLS -->
+<div class="section" id="skills">
+    <h2>Skills</h2>
+
+    <div class="card">
+
+        <b>💻 Technical Skills</b><br><br>
+
+        <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">XAMPP</span>
+            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Visual Studio Code</span>
+            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Microsoft Office</span>
+            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Trello</span>
+            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Katalon Studio</span>
+            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Android Studio</span>
+            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">NetBeans</span>
+            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Canva</span>
+            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Figma</span>
+        </div>
+
+        <br><br>
+
+       <b>🌐 Languages</b><br><br>
+
+        <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">
+                Bahasa Indonesia (Native)
+            </span>
+        </div>
+
+
+    </div>
+</div>
+
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="#home" class="nav-item">Home</a>
+    <a href="#profil" class="nav-item">Profil</a>
+    <a href="#pengalaman" class="nav-item">Pengalaman</a>
+    <a href="#sertifikat" class="nav-item">Sertifikat</a>
+    <a href="#skills" class="nav-item">Skills</a>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img id="modal-img">
+</div>
+
+<script>
+function openModal(el) {
+    document.getElementById('modal').style.display = 'flex';
+    document.getElementById('modal-img').src = el.dataset.img;
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").innerHTML = now.toLocaleString();
+}
+setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
