@@ -6,13 +6,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+        
         html { scroll-behavior: smooth; }
 
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to bottom, #ffe4ec, #ffffff);
+            background: linear-gradient(to bottom, #f5f0e6, #ffffff);
             padding-bottom: 90px;
+            color: #3b2f2f;
         }
 
         .section {
@@ -26,13 +28,13 @@
         }
 
         h1, h2 {
-            color: #e91e63;
-            text-align: center;
+            color: #6b4f3b;
+            margin-bottom: 10px;
         }
 
         /* CARD */
         .card {
-            background: #fff0f5;
+            background: #f3e8dc;
             padding: 20px;
             border-radius: 20px;
             width: 90%;
@@ -56,7 +58,7 @@
 
         /* CARD STYLE */
         .exp-card {
-            background: #fff0f5;
+            background: #f3e8dc;
             padding: 22px;
             border-radius: 15px;
             box-shadow: 0 6px 18px rgba(0,0,0,0.08);
@@ -76,7 +78,7 @@
 
         /* EDUCATION */
         .edu-item {
-            background: #ffffff;
+            background: #fffaf3;
             padding: 15px;
             border-radius: 12px;
             margin-bottom: 15px;
@@ -85,19 +87,17 @@
 
         .edu-title {
             font-weight: bold;
-            color: #e91e63;
+            color: #6b4f3b;
         }
 
         .edu-sub {
             font-size: 13px;
-            color: #777;
-            margin-bottom: 5px;
+            color: #7a6a5a;
         }
 
         .edu-text {
             font-size: 13px;
-            color: #444;
-            line-height: 1.5;
+            color: #4a3b33;
         }
 
         /* ICON */
@@ -108,7 +108,7 @@
         }
 
         .icon-box {
-            background: #fff0f5;
+            background: #f3e8dc;
             padding: 12px;
             border-radius: 50%;
             width: 45px;
@@ -116,7 +116,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #e91e63;
+            color: #6b4f3b;
+            text-decoration: none;
         }
 
         /* NAVBAR */
@@ -127,17 +128,16 @@
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
-            background: white;
+            background: #fffaf3;
             padding: 10px 15px;
             border-radius: 30px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            z-index: 999;
         }
 
         .nav-item {
             text-decoration: none;
-            background: #f8bbd0;
-            color: #e91e63;
+            background: #d8c3a5;
+            color: #3b2f2f;
             padding: 8px 14px;
             border-radius: 20px;
             font-size: 13px;
@@ -174,11 +174,24 @@
 
         #clock {
             margin-top: 10px;
-            font-size: 16px;
-            color: #e91e63;
+            font-size: 14px;
+            color: #6b4f3b;
             font-weight: bold;
         }
 
+        /* FOTO */
+        .photo-card {
+            margin-top: 20px;
+        }
+
+        .photo-card img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #d8c3a5;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
         /* BUTTERFLY */
         .butterflies {
             position: fixed;
@@ -245,34 +258,110 @@
 #sertifikat .exp-grid {
     margin-top: 20px; /* jangan terlalu jauh dari judul */
 }
+#pengalaman {
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#skills {
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.clock-big {
+    font-size: 28px;
+    font-weight: bold;
+    color: #6b4f3b;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+.navbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background: #fffaf3;
+    padding: 12px 18px; /* 🔥 lebih besar */
+    border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+#profil .exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 25px;
+    align-items: start;
+}
+
+#profil .exp-card {
+    background: #f3e8dc;
+    padding: 22px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    text-align: left;
+}
+#profil .photo-card {
+    align-self: start;
+    justify-self: center;
+}
+
+
+
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px; /* 🔥 lebih gede */
+    padding: 8px 12px; /* 🔥 lebih lega */
+    transition: 0.25s;
+}
+
+.nav-item span {
+    width: 6px;
+    height: 6px;
+    margin-top: 6px;
+}
+
+/* active */
+.nav-item.active {
+    transform: translateY(-6px);
+}
+
+
+.nav-item.active span {
+    background: #3b2f2f;
+}
+
 
     </style>
 </head>
 
-<body>
 
-<!-- HOME -->
-<div class="butterflies">
-    <span class="fly">🦋</span>
-    <span class="fly">🦋</span>
-    <span class="fly">🦋</span>
+<body>
+   <!-- MODAL (WAJIB ADA) -->
+<div id="modal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img id="modal-img">
 </div>
 
+
+<!-- HOME -->
 <div class="section" id="home">
 
-    <h1 style="margin-bottom:5px;">LUSZIANA AZZAHRA PUTRI</h1>
+    <h1>LUSZIANA AZZAHRA PUTRI</h1>
 
-    <p style="color:#777; margin:0;">
-        UI/UX Designer • Web Developer • Informatics Student
-    </p>
+    <p>Nganjuk, Jawa Timur | UI/UX Designer • Web Developer</p>
+    <p style="font-size:14px;">Mahasiswa Teknik Informatika Politeknik Negeri Jember</p>
 
-    <p style="max-width:600px; color:#555; font-size:14px; margin-top:10px;">
-        Mahasiswa Teknik Informatika Politeknik Negeri Jember
-    </p>
+    <div id="clock" class="clock-big"></div>
 
-    <div id="clock" style="margin-top:10px; font-size:14px; color:#e91e63; font-weight:bold;"></div>
 
-    <!-- CONTACT ICONS -->
     <div class="contact-icons" style="margin-top:20px;">
 
         <!-- Email -->
@@ -306,9 +395,7 @@
     </div>
 
 
-
-
-<!-- PROFIL & PENDIDIKAN -->
+<!-- PROFIL -->
 <div class="section" id="profil">
     <h2>Profil & Pendidikan</h2>
 
@@ -395,10 +482,8 @@
     </div>
 </div>
 
-
-
 <!-- SERTIFIKAT -->
-<div class="section" id="sertifikat">
+ <div class="section" id="sertifikat">
     <h2>Sertifikat</h2>
 
     <div class="exp-grid">
@@ -449,15 +534,15 @@
         <b>💻 Technical Skills</b><br><br>
 
         <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
-            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">XAMPP</span>
-            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Visual Studio Code</span>
-            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Microsoft Office</span>
-            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Trello</span>
-            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Katalon Studio</span>
-            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Android Studio</span>
-            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">NetBeans</span>
-            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Canva</span>
-            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">Figma</span>
+            <span style="background:#d8c3a5; padding:8px 12px; border-radius:20px; font-size:13px;">XAMPP</span>
+            <span style="background:#d8c3a5; padding:8px 12px; border-radius:20px; font-size:13px;">Visual Studio Code</span>
+            <span style="background:#d8c3a5; padding:8px 12px; border-radius:20px; font-size:13px;">Microsoft Office</span>
+            <span style="background:#d8c3a5; padding:8px 12px; border-radius:20px; font-size:13px;">Trello</span>
+            <span style="background:#d8c3a5; padding:8px 12px; border-radius:20px; font-size:13px;">Katalon Studio</span>
+            <span style="background:#d8c3a5; padding:8px 12px; border-radius:20px; font-size:13px;">Android Studio</span>
+            <span style="background:#d8c3a5; padding:8px 12px; border-radius:20px; font-size:13px;">NetBeans</span>
+            <span style="background:#d8c3a5; padding:8px 12px; border-radius:20px; font-size:13px;">Canva</span>
+            <span style="background:#d8c3a5; padding:8px 12px; border-radius:20px; font-size:13px;">Figma</span>
         </div>
 
         <br><br>
@@ -465,7 +550,7 @@
        <b>🌐 Languages</b><br><br>
 
         <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
-            <span style="background:#f8bbd0; padding:8px 12px; border-radius:20px; font-size:13px;">
+            <span style="background:#d8c3a5; padding:8px 12px; border-radius:20px; font-size:13px;">
                 Bahasa Indonesia (Native)
             </span>
         </div>
@@ -474,21 +559,34 @@
     </div>
 </div>
 
-
 <!-- NAVBAR -->
 <div class="navbar">
-    <a href="#home" class="nav-item">Home</a>
-    <a href="#profil" class="nav-item">Profil</a>
-    <a href="#pengalaman" class="nav-item">Pengalaman</a>
-    <a href="#sertifikat" class="nav-item">Sertifikat</a>
-    <a href="#skills" class="nav-item">Skills</a>
+    <a class="nav-item active" href="#home">
+        <i class="fa-solid fa-house"></i>
+        <span></span>
+    </a>
+
+    <a class="nav-item" href="#profil">
+        <i class="fa-solid fa-user"></i>
+        <span></span>
+    </a>
+
+    <a class="nav-item" href="#pengalaman">
+        <i class="fa-solid fa-briefcase"></i>
+        <span></span>
+    </a>
+
+    <a class="nav-item" href="#sertifikat">
+        <i class="fa-solid fa-certificate"></i>
+        <span></span>
+    </a>
+
+    <a class="nav-item" href="#skills">
+        <i class="fa-solid fa-code"></i>
+        <span></span>
+    </a>
 </div>
 
-<!-- MODAL -->
-<div id="modal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img id="modal-img">
-</div>
 
 <script>
 function openModal(el) {
@@ -506,6 +604,20 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 </script>
+
+<script>
+const navItems = document.querySelectorAll(".nav-item");
+
+navItems.forEach(item => {
+    item.addEventListener("click", function () {
+
+        navItems.forEach(i => i.classList.remove("active"));
+
+        this.classList.add("active");
+    });
+});
+</script>
+
 
 </body>
 </html>
